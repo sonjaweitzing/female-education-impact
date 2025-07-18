@@ -1,0 +1,29 @@
+Lose Documentation on what I do
+
+1. Create Git Repo and connect with Pycharm. Using VE VisTut because it contains data and visualization packages
+
+2. Install noWorkflow in VisTut
+
+3. Want to use jupyter Notebooks -> ProvBook to collect Provenance Information, noWorkflow won't work
+
+4. Install ProvBook
+
+5. ProvBook is not compatible with Newest Python versions, so make new environment "basic" with python=10
+
+6. Got Provbook by cloning repo (new pip install didn't work)  git clone https://github.com/Sheeba-Samuel/ProvBook
+. Then installed the nbextension and enabled it using "index.js" file instead
+jupyter nbextension enable provbook/notebook_ext/index
+... followed this https://figshare.com/articles/media/ProvBook_Provenance_of_the_Notebook/6401096?file=11783951 but changed to index in enabeling
+
+7. Extention is enabled. However, somehow it still doesnt work even thought I open the notebooks in the browser. I will stop this for now.
+
+
+
+8. Downloaded several datasets. Started looking for missing values etc, getting an overview.
+
+9. Got DMP Template and saved it.
+
+10. Plan Präsi:
+ - kurze vorstellung der Froschungsfrage und des Datensets.
+ - jeweils ein paar slides zu den einzelnen punkten des DMP/ des Data life cycles.
+ - Conclusion.

@@ -1,12 +1,41 @@
 # MoSD
 
+This Repository contains the source code of my data management project for the final exam in the Management of Scientific Data course at the University of Jena.
+
+## TODO
+
+Update this README
+
+create metadata eg dublin core generator: https://nsteffel.github.io/dublin_core_generator/generator_nq.html
+
+create naming convention
+
+credit datasets correctly (see readme etc)
 
 
-## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Contents- [MoSD](#mosd)
+  - [Contents](#contents)
+  - [Project description](#project-description)
+  - [Getting started](#getting-started)
+    - [Create your project](#create-your-project)
+    - [Add your files](#add-your-files)
+    - [Integrate with your tools](#integrate-with-your-tools)
+    - [Collaborate with your team](#collaborate-with-your-team)
+    - [Test and Deploy](#test-and-deploy)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Datasets
+
+I chose to use the xx and the yy datasets for my project. The xx dataset contains information about the xx, while the yy dataset contains information about the yy. Both datasets are available in the [data](data) directory of this repository.
+
+## Research question
+
+How does female eduacation and participation in the labor market change societal structures and economic development in different countries?
+
+## Project description
+
+This project aims to demonstrate the management of scientific data using the xx and yy datasets. The goal is to showcase how to effectively handle, analyze, and visualize data in a scientific context.
+
 
 ## Add your files
 
