@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 from matplotlib.animation import FuncAnimation
 
 df = pd.read_csv('../datasets/owid/womens-educational-attainment-vs-fertility.csv')
@@ -55,10 +56,11 @@ ax.grid(True, linestyle='--', alpha=0.5)
 ax.legend()
 
 time_res = 4
-time_speed = 0.5
+time_speed = 1
 time_steps = time_res * (fertility_bubble.shape[1] - 1)
 
 label_texts = [ax.text(0, 0, '', fontsize=9, ha='center', va='bottom') for _ in range(10)]
+
 
 def animate(i):
     t = i / time_res
@@ -79,11 +81,13 @@ def animate(i):
     # Label the 10 biggest countries by population at this time step
     pop_interp = s_interp
     biggest_idx = np.argsort(pop_interp)[-10:]
-    for j, idx in enumerate(biggest_idx):
-        label_texts[j].set_position((p_interp[idx,0], p_interp[idx,1]))
-        label_texts[j].set_text(countries[idx])
-    for j in range(10, len(label_texts)):
-        label_texts[j].set_text('')
+    for j in range(10):
+        if j < len(biggest_idx):
+            idx = biggest_idx[j]
+            label_texts[j].set_position((p_interp[idx,0], p_interp[idx,1]))
+            label_texts[j].set_text(countries[idx])
+        else:
+            label_texts[j].set_text('')
 
 anim = FuncAnimation(fig, animate, interval=(1000*time_speed)/time_res, frames=time_steps)
 plt.show()
