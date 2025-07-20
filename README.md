@@ -12,6 +12,10 @@ create naming convention
 
 credit datasets correctly (see readme etc)
 
+END: 
+Update requirements.txt
+conda list --export > requirements.txt
+
 
 
 ## Contents- [MoSD](#mosd)
@@ -28,6 +32,9 @@ credit datasets correctly (see readme etc)
 
 I chose to use the xx and the yy datasets for my project. The xx dataset contains information about the xx, while the yy dataset contains information about the yy. Both datasets are available in the [data](data) directory of this repository.
 
+https://www.gapminder.org/data/
+https://ourworldindata.org/grapher/womens-educational-attainment-vs-fertility
+
 ## Research question
 
 How does female eduacation and participation in the labor market change societal structures and economic development in different countries?
@@ -35,6 +42,26 @@ How does female eduacation and participation in the labor market change societal
 ## Project description
 
 This project aims to demonstrate the management of scientific data using the xx and yy datasets. The goal is to showcase how to effectively handle, analyze, and visualize data in a scientific context.
+
+## Naming Convention
+
+This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
+- **Datasets**: All datasets are stored in the `datasets` directory. Each dataset file should be named descriptively, e.g., `dataset_name.csv`.
+- **Scripts**: All scripts are stored in the `scripts` directory. Each script should be named according to its function, e.g., `data_analysis.py`, `data_visualization.py`.
+
+- Short Code for each Dataset: Save cleaned datasets/changed/merged using these codes
+
+    Description of the content
+    Project number
+    Name of creator
+    Name of research team/department associated with the data
+    Date of creation; Publication date
+    Version number
+- **Documentation**: All documentation files are stored in the `docs` directory. Each documentation file should be named according to its content, e.g., `README.md`, `data_description.md`.
+- **Images**: All images used in the project are stored in the `images` directory. Each image file should be named descriptively, e.g., `data_visualization.png`.
+- **Results**: All results of the analysis are stored in the `results` directory. Each result file should be named according to its content, e.g., `analysis_results.csv`, `visualization_results.png`.
+- 
+
 
 
 ## Add your files
