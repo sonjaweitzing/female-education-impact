@@ -2,22 +2,25 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+from utils import get_timestamp
+import json
 
-df = pd.read_csv('../datasets/owid/womens-educational-attainment-vs-fertility_filtered.csv')
+# Load delete_datasets
+df = pd.read_csv('../data/processed/ds_1_filtered_womans-educational-attainment-vs-fertility_2025-07-21T20:55:36.csv')
 df = df[['Entity', 'Year',
          'Fertility rate - Sex: all - Age: all - Variant: estimates',
          'Combined - average years of education for 15-64 years female youth and adults',
          'Population (historical)',
-         'Region']]
+         'World regions according to OWID']]
 df = df.dropna(subset=[
     'Fertility rate - Sex: all - Age: all - Variant: estimates',
     'Combined - average years of education for 15-64 years female youth and adults',
     'Population (historical)'
 ])
 
-# Build country-to-region mapping using the new Region column
-region_df = df[['Entity', 'Region']].dropna(subset=['Region'])
-region_map = region_df.drop_duplicates(subset=['Entity']).set_index('Entity')['Region'].to_dict()
+# Build country-to-region mapping
+region_df = df[['Entity', 'World regions according to OWID']].dropna(subset=['World regions according to OWID'])
+region_map = region_df.drop_duplicates(subset=['Entity']).set_index('Entity')['World regions according to OWID'].to_dict()
 
 # Pivot data
 fertility = df.pivot(index='Entity', columns='Year', values='Fertility rate - Sex: all - Age: all - Variant: estimates')
@@ -59,8 +62,8 @@ scatterplot = ax.scatter(
     c=colors
 )
 world_line, = ax.plot(world_edu, world_fert, color='red', lw=2, label='World')
-ax.set_xlabel('Mean Years in School (Female, 15-64)')
-ax.set_ylabel('Fertility Rate')
+ax.set_xlabel('Mean Years in School (Female, 15-64) [years]')
+ax.set_ylabel('Fertility Rate [Babies per woman]')
 ax.set_title(str(years[0]))
 ax.grid(True, linestyle='--', alpha=0.5)
 
@@ -92,4 +95,37 @@ def animate(i):
 
 
 anim = FuncAnimation(fig, animate, interval=(1000*time_speed)/time_res, frames=time_steps)
+
+# save the visualizations with timestamp
+timestamp = get_timestamp()
+# anim.save(f'../visualizations/anim_ds1_{timestamp}.mp4', writer='ffmpeg', fps=30) # version conflicting with matplotlib
+anim.save(f'../visualizations/an_1_bubbles-woman-education-fertility_{timestamp}.gif', writer='pillow', fps=30)
+
 plt.show()
+
+# create a JSON file with the dataset metadata
+metadata = {
+  "title": "Women's Educational Attainment vs Fertility Rate (Animated Bubble Chart)",
+  "description": "An animated bubble chart visualizing the relationship between mean years of education for women (ages 15-64) and fertility rate across countries and regions over time. Bubble size represents population. Bubble color encodes world regions according to Our World in Data (OWID).",
+  "data_source": "../data/processed/womens-educational-attainment-vs-fertility_filtered.csv",
+  "variables": {
+    "x": "Combined - average years of education for 15-64 years female youth and adults",
+    "y": "Fertility rate - Sex: all - Age: all - Variant: estimates",
+    "size": "Population (historical)",
+    "color": "World regions according to OWID"
+  },
+  "regions": "World regions according to OWID",
+  "time_range": "Years covered in the dataset",
+  "output": "../visualizations/anim_ds1_<timestamp>.gif",
+  "author": "sonjaweitzing",
+  "created_with": [
+    "Python",
+    "pandas",
+    "matplotlib",
+    "numpy"
+  ],
+  "created_on": timestamp,
+}
+
+with open(f'../visualizations/md_1_bubbles-woman-education-fertility_{timestamp}', 'w') as f:
+    json.dump(metadata, f, indent=4)

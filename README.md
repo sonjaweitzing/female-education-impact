@@ -17,6 +17,11 @@ Update requirements.txt
 conda list --export > requirements.txt
 
 
+Create JSON metadata
+
+Get conda environment file - add jupyter notebook to environment!
+
+
 
 ## Contents- [MoSD](#mosd)
   - [Contents](#contents)
@@ -46,23 +51,40 @@ This project aims to demonstrate the management of scientific data using the xx 
 ## Naming Convention
 
 This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
-- **Datasets**: All datasets are stored in the `datasets` directory. Each dataset file should be named descriptively, e.g., `dataset_name.csv`.
-- **Scripts**: All scripts are stored in the `scripts` directory. Each script should be named according to its function, e.g., `data_analysis.py`, `data_visualization.py`.
 
-- Short Code for each Dataset: Save cleaned datasets/changed/merged using these codes
+<type>_<id>[_state]_<descriptive name>[_version]_<timestamp>.<file_extension>
 
-    Description of the content
-    Project number
-    Name of creator
-    Name of research team/department associated with the data
-    Date of creation; Publication date
-    Version number
-- **Documentation**: All documentation files are stored in the `docs` directory. Each documentation file should be named according to its content, e.g., `README.md`, `data_description.md`.
-- **Images**: All images used in the project are stored in the `images` directory. Each image file should be named descriptively, e.g., `data_visualization.png`.
-- **Results**: All results of the analysis are stored in the `results` directory. Each result file should be named according to its content, e.g., `analysis_results.csv`, `visualization_results.png`.
-- 
+    - type: The type of the file, two letter abbreviation, e.g., `ds` for datasets, "md" for metadata, `vi` for visualizations, `dc` for data cleaning scripts, `az` for analysis scripts, `am` for animations.
+    - id: A unique identifier for the project/analysis/task the file is associated with, e.g., `1`.
+    - state: The state of the file, important for data and visualizations, not so much for scripts, e.g., `raw`, `cleaned`, `filtered`, `merged`.
+    - descriptive name: A short, descriptive name for the dataset content, e.g., `gdp_pcap`, `population_growth`.
+    - version: Optional version number, e.g., `v1`, `v2.3`.
+    - timestamp: The date of creation or last modification in ISO format, for scripts including time, e.g., '2025-07-19', `2025-07-19T12:00:00`.
+    - file extension: The file type, e.g., `.csv`, `.png`, `.py`.
+
+ID index:
+| ID | Description |
+|----|-------------|
+| 1  | Fertility rate over  womans educational attainment combined with population and world region |
+| 2  | Fertility rate over gender ratio mean years in school combined with population and GDP per capita |
+
+## File Structure
+
+- **Project Root**: The root directory contains the main README file, a requirements file, and a conda environment file.
+- **Requirements**: The `requirements.txt` file lists all the Python packages required for this project. It can be generated using the command `conda list --export > requirements.txt`.
+- **Conda Environment**: The `environment.yml` file contains the conda environment configuration for this project. It can be created using the command `conda env export > environment.yml`.
+- **Project Metadata**: The `project_metadata.json` file contains metadata about the project, including the project title, description, author, and date of creation. This file should be updated with relevant information about the project.
+-  **Data**: The `data` directory contains all datasets used in the project. It is organized into subdirectories based on the data state and source.
+- **Scripts**: The `scripts` directory contains all Python scripts used in the project, including analysis, and visualization scripts.
+- **Notebooks**: The `notebooks` directory contains Jupyter notebooks used for data exploration, cleaning and analysis.
+- **Visualizations**: The `visualizations` directory contains all visualizations generated from the datasets.
 
 
+## Metadata
+
+Metadata is collected for all (raw and filtered) datasets in the `data` directory.
+For the visualizations, metadata is collected in the `visualizations` directory.
+For the scripts metadata is collected implicitly through comments and docstrings within the scripts themselves. For a larger project, it might be useful to create a separate metadata file for the scripts as well.
 
 ## Add your files
 
