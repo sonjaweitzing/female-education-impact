@@ -36,7 +36,7 @@ scatterplot = ax.scatter(
 )
 ax.set_xlabel('Gender Ratio Mean Years in School [percent]')
 ax.set_ylabel('Fertility Rate [Babies per woman]')
-ax.set_title(f'{fertility.columns[0]}')
+ax.set_title(f'Fertility Rate vs Gender Ratio Mean Years in School \n\n{fertility.columns[0]}')
 ax.grid(True, linestyle='--', alpha=0.5)
 cbar = plt.colorbar(scatterplot, ax=ax)
 cbar.set_label('GDP per Capita (USD)')
@@ -58,7 +58,7 @@ def animate(i):
     scatterplot.set_sizes(s_interp)
     c_interp = (1-f) * color[:,t_low] + f * color[:,t_low + 1]
     scatterplot.set_array(c_interp)
-    ax.set_title(f'{fertility.columns[t_low + 1]}')
+    ax.set_title(f'Fertility Rate vs Gender Ratio Mean Years in School \n\n{fertility.columns[t_low + 1]}')
 
     # Label the 10 biggest countries by population at this time step
     pop_interp = s_interp

@@ -64,7 +64,7 @@ scatterplot = ax.scatter(
 world_line, = ax.plot(world_edu, world_fert, color='red', lw=2, label='World')
 ax.set_xlabel('Mean Years in School (Female, 15-64) [years]')
 ax.set_ylabel('Fertility Rate [Babies per woman]')
-ax.set_title(str(years[0]))
+ax.set_title(f'Fertility Rate vs Woman Mean Years in School \n\n{str(years[0])}')
 ax.grid(True, linestyle='--', alpha=0.5)
 
 # Legend for regions
@@ -86,7 +86,7 @@ def animate(i):
     scatterplot.set_offsets(p_interp)
     s_interp = (1-f) * size[:,t_low] + f * size[:,t_low + 1]
     scatterplot.set_sizes(s_interp)
-    ax.set_title(str(years[t_low + 1]))
+    ax.set_title(f'Fertility Rate vs Woman Mean Years in School \n\n{str(years[t_low + 1])}')
 
     # World line interpolation
     world_edu_interp = (1-f) * world_edu[:t_low+1] + f * np.append(world_edu[:t_low], world_edu[t_low+1])
