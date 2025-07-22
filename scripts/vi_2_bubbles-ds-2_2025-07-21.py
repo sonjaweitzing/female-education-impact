@@ -25,7 +25,19 @@ color = gdp_array
 
 countries = fertility.index.tolist()
 
+# After creating fig, ax
 fig, ax = plt.subplots(figsize=(13,8))
+
+# Add text field for bubble size
+ax.text(
+    0.98, 0.98, 'Bubble size: Population',
+    transform=ax.transAxes,
+    fontsize=12, color='black',
+    ha='right', va='top',
+    bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
+)
+
+# Set axis limits and labels
 ax.set(xlim=(0,120), ylim=(0,8))
 scatterplot = ax.scatter(
     positions[:, 0, 0],
@@ -48,6 +60,7 @@ time_steps = time_res * (fertility.shape[1] - 1)
 label_texts = [ax.text(0, 0, '', fontsize=9, ha='center', va='bottom') for _ in range(10)]
 
 def animate(i):
+    ''' Animate the bubble chart by interpolating positions and sizes'''
     t = i / time_res
     t_low = int(t)
     f = t - t_low
@@ -73,12 +86,13 @@ anim = FuncAnimation(fig, animate, interval=(1000*time_speed)/time_res, frames=t
 
 # save the visualizations with timestamp
 timestamp = get_timestamp()
+description = 'bubbles-gender-ratio-school-fertility'
 # anim.save(f'../visualizations/anim_ds2_{timestamp}.mp4', writer='ffmpeg', fps=30) # version conflicting with matplotlib
-anim.save(f'../visualizations/anim_ds2no_{timestamp}.gif', writer='pillow', fps=30)
+anim.save(f'../visualizations/an_2_{description}_{timestamp}.gif', writer='pillow', fps=30)
 
 plt.show()
 
-# create a JSON file with the dataset metadata
+# create a JSON file with the metadata
 metadata = {
   "title": "Gender Ratio in Schooling vs Fertility Rate (Animated Bubble Chart)",
   "description": "An animated bubble chart visualizing the relationship between the gender ratio in mean years of schooling (women as percent of men, ages 25-34) and fertility rate across countries over time. Bubble size represents population, and color encodes GDP per capita.",
@@ -96,7 +110,7 @@ metadata = {
   },
   "countries": "All countries in the datasets",
   "time_range": "Years covered in the datasets",
-  "output": "../visualizations/anim_ds2no_<timestamp>.gif",
+  "output": f'../visualizations/ani_2_{description}_{timestamp}.gif',
   "author": "sonjaweitzing",
   "created_with": [
     "Python",
@@ -104,15 +118,91 @@ metadata = {
     "matplotlib",
     "numpy"
   ],
-  "created_on": "<timestamp>"
+  "created_on": timestamp
 }
 
-# with open(f'../visualizations/md_1_bubbles-woman-education-fertility_{timestamp}', 'w') as f:
-#     json.dump(metadata, f, indent=4)
-
-with open(f'../visualizations/md_2_bubbles-gender-ratio-schooling-fertility_{timestamp}.json', 'w') as f:
+with open(f'../visualizations/md_2_an-{description}_{timestamp}.json', 'w') as f:
     json.dump(metadata, f, indent=4)
 
 
+def plot_bubble_chart_for_year_ds2(year, fertility, gender_school, gdp, population, description='bubble-chart'):
+    """
+    Plots a bubble chart for the given year.
+    Bubble size corresponds to population.
+    """
+    if year not in fertility.columns:
+        raise ValueError(f"Year {year} not found in dataset columns.")
+
+    idx = fertility.columns.get_loc(year)
+    x = gender_school.iloc[:, idx]
+    y = fertility.iloc[:, idx]
+    sizes = population.iloc[:, idx] * 2e-6
+    colors = gdp.iloc[:, idx]
+
+    fig, ax = plt.subplots(figsize=(13,8))
+    scatterplot = ax.scatter(
+        x, y, s=sizes, c=colors,
+        norm=mcolors.LogNorm(vmin=np.nanmin(gdp.values), vmax=np.nanmax(gdp.values))
+    )
+    ax.set_xlabel('Gender Ratio Mean Years in School [percent]')
+    ax.set_ylabel('Fertility Rate [Babies per woman]')
+    ax.set_title(f'Fertility Rate vs Gender Ratio Mean Years in School\n\n{year}')
+    ax.grid(True, linestyle='--', alpha=0.5)
+    cbar = plt.colorbar(scatterplot, ax=ax)
+    cbar.set_label('GDP per Capita (USD)')
+
+    # Add text field for bubble size
+    ax.text(
+        0.98, 0.98, 'Bubble size: Population',
+        transform=ax.transAxes,
+        fontsize=12, color='black',
+        ha='right', va='top',
+        bbox=dict(facecolor='white', alpha=0.7, edgecolor='none')
+    )
+
+    # Label the 10 biggest countries by population
+    biggest_idx = np.argsort(sizes)[-10:]
+    for idx in biggest_idx:
+        ax.text(x.iloc[idx], y.iloc[idx], fertility.index[idx], fontsize=9, ha='center', va='bottom')
+
+    # save the figure
+    timestamp = get_timestamp()
+    fig.savefig(f'../visualizations/pl_2_{description}-{year}_{timestamp}.pdf', bbox_inches='tight')
+
+    # Create metadata for the plot
+    metadata = {
+      "title": "Bubble Chart: Gender Ratio in Schooling vs Fertility Rate",
+      "description": "Bubble chart showing the relationship between gender ratio in mean years of schooling (women as percent of men, ages 25-34) and fertility rate for a given year. Bubble size represents population, and color encodes GDP per capita.",
+      "data_sources": {
+        "fertility": "../data/processed/ds_2_filtered_fertility_2025-07-21T20:55:35.csv",
+        "gdp_per_capita": "../data/processed/ds_2_filtered_gdp_2025-07-21T20:55:35.csv",
+        "gender_schooling": "../data/processed/ds_2_filtered_gender_school_2025-07-21T20:55:35.csv",
+        "population": "../data/processed/ds_2_filtered_population_2025-07-21T20:55:35.csv"
+      },
+      "variables": {
+        "x": "Gender Ratio Mean Years in School (women as percent of men, ages 25-34)",
+        "y": "Fertility Rate (babies per woman)",
+        "size": "Population",
+        "color": "GDP per Capita (USD)"
+      },
+      "countries": "All countries in the datasets",
+      "year": year,
+      "output": f'../visualizations/pl_2_{description}-{year}_{timestamp}.pdf',
+      "author": "sonjaweitzing",
+      "created_with": [
+        "Python",
+        "pandas",
+        "matplotlib",
+        "numpy"
+      ],
+      "created_on": timestamp
+    }
+
+    with open(f'../visualizations/md_2_pl-{description}-{year}_{timestamp}.json', 'w') as f:
+        json.dump(metadata, f, indent=4)
+
+# Plot bubble chart for the year 2015
+plot_bubble_chart_for_year_ds2('2015', fertility, gender_school, gdp, population, description)
+plot_bubble_chart_for_year_ds2('1970', fertility, gender_school, gdp, population, description)
 
 
