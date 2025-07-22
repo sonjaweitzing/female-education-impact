@@ -31,11 +31,11 @@ This project aims to demonstrate the management of scientific data using the xx 
 
 This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
 
-***File Naming Format**: `<type>_<id>_[state_]<descriptive-name>_[version_]<timestamp>.<file_extension>`
+**File Naming Format**: `<type>_<id>_[state_]<descriptive-name>_[version_]<timestamp>.<file_extension>`
 
 Where:
 
-- \`type\`: The type of the file, two letter abbreviation, e.g., \`ds\` for datasets, \`md\` for metadata, \`vi\` for visualizations, \`dc\` for data cleaning scripts, \`az\` for analysis scripts, \`am\` for animations.
+- \`type\`: The type of the file, two letter abbreviation, e.g., \`ds\` for datasets, \`md\` for metadata, \`vi\` for visualizations, \`dc\` for data cleaning scripts, \`az\` for analysis scripts, \`an\` for animations.
 - \`id\`: A unique identifier for the project/analysis/task the file is associated with, e.g., \`1\`.
 - \`state\`: The state of the file, important for data and visualizations, not so much for scripts, e.g., \`raw\`, \`cleaned\`, \`filtered\`, \`merged\`.
 - \`descriptive\_name\`: A short, descriptive name for the dataset content, e.g., \`gdp_pcap\`, \`population_growth\`.
