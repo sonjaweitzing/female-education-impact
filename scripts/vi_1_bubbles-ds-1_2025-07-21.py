@@ -197,8 +197,8 @@ def plot_bubble_for_year(df, year, description):
 
     # Generate output paths
     timestamp = get_timestamp()
-    plot_path = f'../visualizations/pl_1_bubbles-{description}_{year}_{timestamp}.pdf'
-    metadata_path = f'../visualizations/md_1_pl-bubbles-{description}_{year}_{timestamp}.json'
+    plot_path = f'../visualizations/pl_1_{description}_{year}_{timestamp}.pdf'
+    metadata_path = f'../visualizations/md_1_pl-{description}_{year}_{timestamp}.json'
 
     plt.savefig(plot_path)
 

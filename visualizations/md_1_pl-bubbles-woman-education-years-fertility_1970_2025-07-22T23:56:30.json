@@ -1,6 +1,6 @@
 {
-    "title": "Women's Educational Attainment vs Fertility Rate (2015, Bubble Chart)",
-    "description": "Bubble chart visualizing the relationship between mean years of education for women (ages 15-64) and fertility rate across countries and regions for 2015. Bubble size represents population. Bubble color encodes world regions according to Our World in Data (OWID).",
+    "title": "Women's Educational Attainment vs Fertility Rate (1970, Bubble Chart)",
+    "description": "Bubble chart visualizing the relationship between mean years of education for women (ages 15-64) and fertility rate across countries and regions for 1970. Bubble size represents population. Bubble color encodes world regions according to Our World in Data (OWID).",
     "data_source": "../data/processed/womens-educational-attainment-vs-fertility_filtered.csv",
     "variables": {
         "x": "Combined - average years of education for 15-64 years female youth and adults",
@@ -9,8 +9,8 @@
         "color": "World regions according to OWID"
     },
     "regions": "World regions according to OWID",
-    "year": 2015,
-    "output": "../visualizations/pl_1_bubbles-bubbles-woman-education-years-fertility_2015_2025-07-22T19:42:17.pdf",
+    "year": 1970,
+    "output": "../visualizations/pl_1_bubbles-woman-education-years-fertility_1970_2025-07-22T23:56:30.pdf",
     "author": "sonjaweitzing",
     "created_with": [
         "Python",
@@ -18,5 +18,5 @@
         "matplotlib",
         "numpy"
     ],
-    "created_on": "2025-07-22T19:42:17"
+    "created_on": "2025-07-22T23:56:30"
 }
