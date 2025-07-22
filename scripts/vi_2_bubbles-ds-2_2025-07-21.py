@@ -53,8 +53,8 @@ ax.grid(True, linestyle='--', alpha=0.5)
 cbar = plt.colorbar(scatterplot, ax=ax)
 cbar.set_label('GDP per Capita (USD)')
 
-time_res = 4
-time_speed = 0.1
+time_res = 10
+time_speed = 1
 time_steps = time_res * (fertility.shape[1] - 1)
 
 label_texts = [ax.text(0, 0, '', fontsize=9, ha='center', va='bottom') for _ in range(10)]

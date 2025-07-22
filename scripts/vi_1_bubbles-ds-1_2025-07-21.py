@@ -86,8 +86,8 @@ handles = [plt.Line2D([0], [0], marker='o', color='w', label=r,
            for r in unique_regions]
 ax.legend(handles=handles + [world_line], loc='upper right')
 
-time_res = 4
-time_speed = 1
+time_res = 20
+time_speed = 2
 time_steps = time_res * (fertility_bubble.shape[1] - 1)
 
 def animate(i):
