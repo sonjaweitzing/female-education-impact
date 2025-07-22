@@ -31,14 +31,15 @@ This project aims to demonstrate the management of scientific data using the xx 
 
 This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
 
-\`<type>\_<id>\[_state]\_<descriptive name>\[_version]\_<timestamp>.<file\_extension>\`
-    - type: The type of the file, two letter abbreviation, e.g., `ds` for datasets, "md" for metadata, `vi` for visualizations, `dc` for data cleaning scripts, `az` for analysis scripts, `am` for animations.
-    - id: A unique identifier for the project/analysis/task the file is associated with, e.g., `1`.
-    - state: The state of the file, important for data and visualizations, not so much for scripts, e.g., `raw`, `cleaned`, `filtered`, `merged`.
-    - descriptive name: A short, descriptive name for the dataset content, e.g., `gdp_pcap`, `population_growth`.
-    - version: Optional version number, e.g., `v1`, `v2.3`.
-    - timestamp: The date of creation or last modification in ISO format, for scripts including time, e.g., '2025-07-19', `2025-07-19T12:00:00`.
-    - file extension: The file type, e.g., `.csv`, `.png`, `.py`.
+```\`<type>\_<id>\[_state]\_<descriptive name>\[_version]\_<timestamp>.<file\_extension>\`
+
+- \`type\`: The type of the file, two letter abbreviation, e.g., \`ds\` for datasets, \`md\` for metadata, \`vi\` for visualizations, \`dc\` for data cleaning scripts, \`az\` for analysis scripts, \`am\` for animations.
+- \`id\`: A unique identifier for the project/analysis/task the file is associated with, e.g., \`1\`.
+- \`state\`: The state of the file, important for data and visualizations, not so much for scripts, e.g., \`raw\`, \`cleaned\`, \`filtered\`, \`merged\`.
+- \`descriptive\_name\`: A short, descriptive name for the dataset content, e.g., \`gdp_pcap\`, \`population_growth\`.
+- \`version\`: Optional version number, e.g., \`v1\`, \`v2.3\`.
+- \`timestamp\`: The date of creation or last modification in ISO format, for scripts including time, e.g., \`2025-07-19\`, \`2025-07-19T12:00:00\`.
+- \`file\_extension\`: The file type, e.g., \`.csv\`, \`.png\`, \`.py\`.
 
 ID index:
 | ID | Description |
