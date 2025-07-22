@@ -2,18 +2,6 @@
 
 This Repository contains the source code of my data management project for the final exam in the Management of Scientific Data course at the University of Jena.
 
-## TODO
-
-Update this README
-
-create metadata eg dublin core generator: https://nsteffel.github.io/dublin_core_generator/generator_nq.html
-
-
-END: 
-Update requirements.txt
-conda list --export > requirements.txt
-
-
 
 ## Contents- [MoSD](#mosd)
 - [Datasets](#datasets)
@@ -43,8 +31,7 @@ This project aims to demonstrate the management of scientific data using the xx 
 
 This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
 
-<type>_<id>[_state]_<descriptive name>[_version]_<timestamp>.<file_extension>
-
+\`<type>\_<id>\[_state]\_<descriptive name>\[_version]\_<timestamp>.<file\_extension>\`
     - type: The type of the file, two letter abbreviation, e.g., `ds` for datasets, "md" for metadata, `vi` for visualizations, `dc` for data cleaning scripts, `az` for analysis scripts, `am` for animations.
     - id: A unique identifier for the project/analysis/task the file is associated with, e.g., `1`.
     - state: The state of the file, important for data and visualizations, not so much for scripts, e.g., `raw`, `cleaned`, `filtered`, `merged`.
@@ -61,10 +48,9 @@ ID index:
 
 ## File Structure
 
-- **Project Root**: The root directory contains the main README file, a requirements file, and a conda environment file.
-- **Requirements**: The `requirements.txt` file lists all the Python packages required for this project. It can be generated using the command `conda list --export > requirements.txt`.
-- **Conda Environment**: The `environment.yml` file contains the conda environment configuration for this project. It can be created using the command `conda env export > environment.yml`.
-- **Project Metadata**: The `project_metadata.json` file contains metadata about the project, including the project title, description, author, and date of creation. This file should be updated with relevant information about the project.
+- **Project Root**: The root directory contains the main README file, a requirements file, and a conda environment file and a LICENSE file.
+- **Requirements**: The `requirements.txt` file lists all the Python packages required for this project.
+- **Conda Environment**: The `environment.yml` file contains the conda environment configuration for this project.
 -  **Data**: The `data` directory contains all datasets used in the project. It is organized into subdirectories based on the data state and source.
 - **Scripts**: The `scripts` directory contains all Python scripts used in the project, including analysis, and visualization scripts.
 - **Notebooks**: The `notebooks` directory contains Jupyter notebooks used for data exploration, cleaning and analysis.
