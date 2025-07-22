@@ -1,0 +1,84 @@
+{
+  "chart": {
+    "title": "Women's educational attainment vs. fertility rate",
+    "subtitle": "The [total fertility rate](#dod:fertility-rate) summarizes the total number of births a woman would have, if she experienced the birth rates seen in women of each age group in one particular year across her childbearing years. Educational attainment is the average number of years of formal education received by women between the ages of 15 and 64.",
+    "citation": "UN, World Population Prospects (2024); Barro and Lee (2015); Lee and Lee (2016)",
+    "originalChartUrl": "https://ourworldindata.org/grapher/womens-educational-attainment-vs-fertility?v=1&csvType=full&useColumnShortNames=false",
+    "selection": []
+  },
+  "columns": {
+    "Fertility rate - Sex: all - Age: all - Variant: estimates": {
+      "titleShort": "Fertility rate, total",
+      "titleLong": "Fertility rate, total - UN WPP",
+      "descriptionShort": "The average number of live births a hypothetical cohort of women would have at the end of their reproductive period if they were subject during their whole lives to the fertility rates of a given period and if they were not subject to mortality.",
+      "descriptionKey": [
+        "It is expressed as live births per woman. For age-specific fertility rates, it measures the number of births to women in a particular age group, divided by the number of women in that age group. The age groups used are: 15-19, 20-24, ..., 45-49. The data refer to annual civil calendar years from 1 January to 31 December."
+      ],
+      "unit": "live births per woman",
+      "timespan": "1950-2023",
+      "type": "Numeric",
+      "owidVariableId": 950920,
+      "shortName": "fertility_rate__sex_all__age_all__variant_estimates",
+      "lastUpdated": "2024-07-12",
+      "citationShort": "UN, World Population Prospects (2024) – processed by Our World in Data",
+      "citationLong": "UN, World Population Prospects (2024) – processed by Our World in Data. “Fertility rate, total – UN WPP” [dataset]. United Nations, “World Population Prospects” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/950920.metadata.json"
+    },
+    "Combined - average years of education for 15-64 years female youth and adults": {
+      "titleShort": "Average years of schooling (women aged 15–64)",
+      "titleLong": "Average years of schooling (women aged 15–64)",
+      "descriptionShort": "Average years of formal education for women aged 15-64.",
+      "descriptionKey": [
+        "For the years leading up to 2015, the data are derived from historical estimates, providing a retrospective view of education levels. For the years 2015 and beyond, the projections are grounded in the historical data of 2010, which serve as the foundational benchmark. These forward-looking projections are then crafted by analyzing trends in school enrollment and changes in population structures. These trends are informed by forecasts from the United Nations, ensuring a global perspective and understanding of future educational developments.",
+        "The method to estimate average years of schooling takes into account the age distribution in the population. This is important because access to education can vary significantly across generations. Older generations may have had fewer educational opportunities than younger ones, which affects the overall average education level.",
+        "It also considers the typical duration required to complete each education level. For instance, primary education usually takes about 6 years, secondary education 4-6 years, and higher education may take even longer. Understanding the time investment required for different education levels is essential for accurate assessment.",
+        "At its core, the method calculates the average years of schooling. This is achieved by determining the percentage of the population that has completed each education level and multiplying it by the duration of that level. The sum of these results gives a comprehensive view of both the extent of educational attainment and the time spent in education by the population.",
+        "The method is dynamic, adapting to changes over time and across regions. For example, if a country increases the length of primary education, this change is included in subsequent calculations. This adaptability ensures that the average years of education remain relevant and accurate over time and across different educational systems.",
+        "Note that the method does not take into account the quality of education. It only considers the number of years spent in education. This means that the average years of schooling may not reflect the actual skills and knowledge of the population."
+      ],
+      "descriptionProcessing": "Historical data up to the year 2010 has been sourced from 'Human Capital in the Long Run' by Lee and Lee (2016). This historical data was then combined with recent projections provided by Barro ane Lee (2015).\n\nRegional aggregates were computed by Our World in Data through yearly population-weighted averages, where annual values are proportionally adjusted to emphasize the influence of larger populations.\n",
+      "unit": "years",
+      "timespan": "1870-2040",
+      "type": "Numeric",
+      "owidVariableId": 809140,
+      "shortName": "f_youth_and_adults__15_64_years__average_years_of_education",
+      "lastUpdated": "2023-07-17",
+      "citationShort": "Barro and Lee (2015); Lee and Lee (2016) – with major processing by Our World in Data",
+      "citationLong": "Barro and Lee (2015); Lee and Lee (2016) – with major processing by Our World in Data. “Average years of schooling (women aged 15–64)” [dataset]. Barro and Lee, “Projections of Educational Attainment”; Lee and Lee, “Human Capital in the Long Run” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/809140.metadata.json"
+    },
+    "Population (historical)": {
+      "titleShort": "Population (historical)",
+      "titleLong": "Population (historical)",
+      "descriptionShort": "Population by country, available from 10,000 BCE to 2023, based on data and estimates from different sources.",
+      "descriptionProcessing": "### Combination of different sources\nThe population data is constructed by combining data from multiple sources:\n\n- 10,000 BCE - 1799: Historical estimates by HYDE (v3.3).\n\n- 1800 - 1949: Historical estimates by Gapminder (v7).\n\n- 1950-2023: Population records by the UN World Population Prospects (2024 revision).\n\n### Regional aggregates\n\n**Continents and other region aggregates**:\n\nFor most of the years, we've estimated regional aggregates by summing the population of countries in each region. We've relied on [our continents](https://ourworldindata.org/world-region-map-definitions#our-world-in-data) and [World Bank income group definitions](https://ourworldindata.org/grapher/world-bank-income-groups). The only exception is before 1800, where we've used HYDE's estimates on continents (but not income groups).\n\n**World**:\n- Before 1800: We've used HYDE's estimates.\n- 1800-1950: We've estimated the World population by summing all available countries in the dataset, ensuring that we do not double-count any country.\n- After 1950: We've relied on UN WPP's estimates.",
+      "shortUnit": "",
+      "unit": "people",
+      "timespan": "-10000-2023",
+      "type": "Integer",
+      "owidVariableId": 953903,
+      "shortName": "population_historical",
+      "lastUpdated": "2024-07-15",
+      "nextUpdate": "2026-07-15",
+      "citationShort": "HYDE (2023); Gapminder (2022); UN WPP (2024) – with major processing by Our World in Data",
+      "citationLong": "HYDE (2023); Gapminder (2022); UN WPP (2024) – with major processing by Our World in Data. “Population (historical)” [dataset]. PBL Netherlands Environmental Assessment Agency, “History Database of the Global Environment 3.3”; Gapminder, “Population v7”; United Nations, “World Population Prospects”; Gapminder, “Systema Globalis” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/953903.metadata.json"
+    },
+    "World regions according to OWID": {
+      "titleShort": "World regions according to OWID",
+      "titleLong": "World regions according to OWID",
+      "descriptionKey": [],
+      "unit": "",
+      "timespan": "2023-2023",
+      "type": "Continent",
+      "owidVariableId": 900801,
+      "shortName": "owid_region",
+      "lastUpdated": "2023-01-01",
+      "citationShort": "Our World in Data – processed by Our World in Data",
+      "citationLong": "Our World in Data – processed by Our World in Data. “World regions according to OWID” [dataset]. Our World in Data, “Regions” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/900801.metadata.json"
+    }
+  },
+  "dateDownloaded": "2025-07-18",
+  "activeFilters": {}
+}

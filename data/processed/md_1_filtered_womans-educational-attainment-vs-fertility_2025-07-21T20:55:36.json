@@ -1,0 +1,87 @@
+{
+    "chart": {
+        "title": "Women's educational attainment vs. fertility rate (Filtered, 1950-2020, mapped regions)",
+        "subtitle": "Filtered to years 1950-2020, duplicates removed, and only countries with mapped OWID regions included. The dataset summarizes the total number of births a woman would have and the average years of formal education received by women between the ages of 15 and 64.",
+        "citation": "UN, World Population Prospects (2024); Barro and Lee (2015); Lee and Lee (2016)",
+        "originalChartUrl": "https://ourworldindata.org/grapher/womens-educational-attainment-vs-fertility?v=1&csvType=full&useColumnShortNames=false",
+        "selection": []
+    },
+    "columns": {
+        "Entity": {
+            "titleShort": "Country or region",
+            "descriptionShort": "Country or region name as defined by OWID."
+        },
+        "Year": {
+            "titleShort": "Year",
+            "descriptionShort": "Calendar year of observation."
+        },
+        "Fertility rate - Sex: all - Age: all - Variant: estimates": {
+            "titleShort": "Fertility rate, total",
+            "titleLong": "Fertility rate, total - UN WPP",
+            "descriptionShort": "The average number of live births a hypothetical cohort of women would have at the end of their reproductive period if they were subject during their whole lives to the fertility rates of a given period and if they were not subject to mortality.",
+            "unit": "live births per woman",
+            "timespan": "1950-2020",
+            "type": "Numeric",
+            "owidVariableId": 950920
+        },
+        "Combined - average years of education for 15-64 years female youth and adults": {
+            "titleShort": "Average years of schooling (women aged 15\u201364)",
+            "titleLong": "Average years of schooling (women aged 15\u201364)",
+            "descriptionShort": "Average years of formal education for women aged 15-64.",
+            "unit": "years",
+            "timespan": "1950-2020",
+            "type": "Numeric",
+            "owidVariableId": 809140
+        },
+        "Population (historical)": {
+            "titleShort": "Population (historical)",
+            "descriptionShort": "Population by country, available from 1950 to 2020.",
+            "unit": "people",
+            "timespan": "1950-2020",
+            "type": "Integer",
+            "owidVariableId": 953903
+        },
+        "World regions according to OWID": {
+            "titleShort": "World regions according to OWID",
+            "descriptionShort": "World region as mapped by OWID.",
+            "type": "Continent",
+            "owidVariableId": 900801
+        }
+    },
+    "filtered": {
+        "file": "../data/processed/ds_1_filtered_womans-educational-attainment-vs-fertility_2025-07-21T20:55:36.csv",
+        "shape": [
+            17237,
+            7
+        ],
+        "columns": [
+            "Entity",
+            "Year",
+            "Fertility rate - Sex: all - Age: all - Variant: estimates",
+            "Combined - average years of education for 15-64 years female youth and adults",
+            "Population (historical)",
+            "World regions according to OWID"
+        ],
+        "filtersApplied": [
+            "Years filtered to 1950-2020",
+            "Duplicates removed",
+            "Rows with unmapped regions removed"
+        ],
+        "processingSteps": [
+            "Loaded raw data",
+            "Dropped duplicate rows",
+            "Filtered for years 1950-2020",
+            "Mapped countries to OWID regions",
+            "Removed rows with unmapped regions"
+        ],
+        "dateFiltered": "2025-07-21T20:55:36"
+    },
+    "dateDownloaded": "2025-07-18",
+    "activeFilters": {
+        "years": [
+            1950,
+            2020
+        ],
+        "regions": "Mapped to OWID regions"
+    }
+}

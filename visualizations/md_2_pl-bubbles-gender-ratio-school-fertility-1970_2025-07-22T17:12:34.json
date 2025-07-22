@@ -1,0 +1,27 @@
+{
+    "title": "Bubble Chart: Gender Ratio in Schooling vs Fertility Rate",
+    "description": "Bubble chart showing the relationship between gender ratio in mean years of schooling (women as percent of men, ages 25-34) and fertility rate for a given year. Bubble size represents population, and color encodes GDP per capita.",
+    "data_sources": {
+        "fertility": "../data/processed/ds_2_filtered_fertility_2025-07-21T20:55:35.csv",
+        "gdp_per_capita": "../data/processed/ds_2_filtered_gdp_2025-07-21T20:55:35.csv",
+        "gender_schooling": "../data/processed/ds_2_filtered_gender_school_2025-07-21T20:55:35.csv",
+        "population": "../data/processed/ds_2_filtered_population_2025-07-21T20:55:35.csv"
+    },
+    "variables": {
+        "x": "Gender Ratio Mean Years in School (women as percent of men, ages 25-34)",
+        "y": "Fertility Rate (babies per woman)",
+        "size": "Population",
+        "color": "GDP per Capita (USD)"
+    },
+    "countries": "All countries in the datasets",
+    "year": "1970",
+    "output": "../visualizations/pl_2_bubbles-gender-ratio-school-fertility-1970_2025-07-22T17:12:34.pdf",
+    "author": "sonjaweitzing",
+    "created_with": [
+        "Python",
+        "pandas",
+        "matplotlib",
+        "numpy"
+    ],
+    "created_on": "2025-07-22T17:12:34"
+}
