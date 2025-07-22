@@ -31,7 +31,9 @@ This project aims to demonstrate the management of scientific data using the xx 
 
 This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
 
-```\`<type>\_<id>\[_state]\_<descriptive name>\[_version]\_<timestamp>.<file\_extension>\`
+***File Naming Format**: `type_<id>_[state_]descriptive-name_[version_]timestamp.file_extension`
+
+Where:
 
 - \`type\`: The type of the file, two letter abbreviation, e.g., \`ds\` for datasets, \`md\` for metadata, \`vi\` for visualizations, \`dc\` for data cleaning scripts, \`az\` for analysis scripts, \`am\` for animations.
 - \`id\`: A unique identifier for the project/analysis/task the file is associated with, e.g., \`1\`.
