@@ -31,7 +31,7 @@ This project aims to demonstrate the management of scientific data using the xx 
 
 This project follows a specific naming convention for files and directories to ensure clarity and consistency. The naming convention is as follows:
 
-***File Naming Format**: `type_<id>_[state_]descriptive-name_[version_]timestamp.file_extension`
+***File Naming Format**: `<type>_<id>_[state_]<descriptive-name>_[version_]<timestamp>.<file_extension>`
 
 Where:
 
