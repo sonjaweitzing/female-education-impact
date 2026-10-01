@@ -1,9 +1,11 @@
-# MoSD
+# Female Education Impact
+
+**Scientific Data Management Project**
 
 This Repository contains the source code of my data management project for the final exam in the Management of Scientific Data course at the University of Jena.
 
 
-## Contents- [MoSD](#mosd)
+## Contents
 - [Datasets](#datasets)
 - [Research question](#research-question)
 - [Project description](#project-description)
@@ -16,8 +18,8 @@ This Repository contains the source code of my data management project for the f
 ## Datasets
 
 This project uses two datasets from Gapminder and Our World in Data:
-https://www.gapminder.org/data/
-https://ourworldindata.org/grapher/womens-educational-attainment-vs-fertility
+- Gapminder: https://www.gapminder.org/data/
+- Our World in Data: https://ourworldindata.org/grapher/womens-educational-attainment-vs-fertility
 
 ## Research question
 
@@ -25,7 +27,7 @@ How does female education impact society in different countries?
 
 ## Project description
 
-This project aims to demonstrate the management of scientific data using the xx and yy datasets. The goal is to showcase how to effectively handle, analyze, and visualize data in a scientific context.
+This project aims to demonstrate the management of scientific data using the Gapminder and Our World in Data datasets. The goal is to showcase how to effectively handle, analyze, and visualize data in a scientific context.
 
 ## Naming Convention
 
@@ -46,7 +48,7 @@ Where:
 ID index:
 | ID | Description |
 |----|-------------|
-| 1  | Fertility rate over  womans educational attainment combined with population and world region |
+| 1  | Fertility rate over women's educational attainment combined with population and world region |
 | 2  | Fertility rate over gender ratio mean years in school combined with population and GDP per capita |
 
 ## File Structure
@@ -70,27 +72,27 @@ To get started with this project, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://git.uni-jena.de/sonjaweitzing/mosd.git
-   ```
-   cd mosd
+   git clone https://github.com/sonjaweitzing/female-education-impact.git
+   cd female-education-impact
    ```
 
 2. **Create a new virtual environment and install dependencies:**
-   - Using **conda**:
+   - Using **conda** (`requirements.txt` and `environment.yml` are exports of the original environment, Python 3.8 on Linux 64-bit):
      ```bash
      conda create --name mosd_env --file requirements.txt
      conda activate mosd_env
      ```
-   - Using **pip**:
+   - Using **pip** (any platform):
      ```bash
      python3 -m venv mosd_env
      source mosd_env/bin/activate
-     pip install -r requirements.txt
+     pip install numpy pandas matplotlib pillow jupyter
      ```
 
-3. **Run the scripts:**
+3. **Run the scripts** (from inside the `scripts` directory, as they use relative paths):
    ```bash
-   python scripts/vi_1_bubbles-ds-1_2025-07-21.py
+   cd scripts
+   python vi_1_bubbles-ds-1_2025-07-21.py
    ```
 4. **Open Jupyter Notebook:**
    ```bash
@@ -98,6 +100,6 @@ To get started with this project, follow these steps:
     ```
 
 ## License
-This Project is licensed under the CC-BY-4.0 license. See the [LICENSE](LICENSE) file for details.
+This Project is licensed under the CC-BY-4.0 license. See the [LICENSE](LICENSE.md) file for details.
 Analysis and Visualization is based on free material from GAPMINDER.ORG, CC-BY LICENSE and UN, World Population Prospects (2024) – processed by Our World in Data. “Fertility rate, total – UN WPP” [dataset]. United Nations, “World Population Prospects” [original data].
 

@@ -278,4 +278,3 @@ dependencies:
       - websocket-client==1.8.0
       - widgetsnbextension==4.0.14
       - zipp==3.15.0
-prefix: /home/sonja/programs/miniconda3/envs/noworkflow_py38
